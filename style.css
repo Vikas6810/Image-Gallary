@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #191919;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+}
+
+h2{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2rem;
+    color: white;
+    margin: 30px auto;
+}
+.gallary-warp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+
+}
+.gallary{
+    display: flex;
+    width: 900px;
+    overflow-x: scroll;
+}
+
+.gallary div{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 20px;
+    width: 100%;
+    padding: 10px;
+    flex: none;
+}
+
+.gallary div img{
+    filter: grayscale(100);
+    transition: transform 0.5s;
+    width: 100%;
+}
+
+.gallary div img:hover{
+    filter: grayscale(0);
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.gallary::-webkit-scrollbar{
+    display: none;
+}
+
+#backBtn, #nextBtn{
+    width: 50px;
+    margin: 40px;
+    cursor: pointer;
+}

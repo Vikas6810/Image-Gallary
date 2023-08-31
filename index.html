@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./images/logo.webp" type="image/x-icon">
+    <title>Image Gallary</title>
+</head>
+
+<body>
+    <div class="main">
+        <h2>Image Gallary Website</h2>
+        <div class="gallary-warp">
+            <img src="./images/back.png" alt="Previous" id="backBtn">
+            <div class="gallary">
+                <div>
+                    <span><img src="./images/image-1.png" alt=""></span>
+                    <span><img src="./images/image-2.png" alt=""></span>
+                    <span><img src="./images/image-3.png" alt=""></span>
+                </div>
+                <div>
+                    <span><img src="./images/image-4.png" alt=""></span>
+                    <span><img src="./images/image-5.png" alt=""></span>
+                    <span><img src="./images/image-6.png" alt=""></span>
+                </div>
+            </div>
+            <img src="./images/next.png" alt="Next" id="nextBtn">
+        </div>
+
+    </div>
+
+
+    <script>
+
+        let scrollContainer = document.querySelector('.gallary');
+        let backBtn = document.getElementById('backBtn');
+        let nextBtn = document.getElementById('nextBtn');
+
+        scrollContainer.addEventListener("wheel", (evt) => {
+            evt.preventDefault();
+            scrollContainer.scrollLeft += evt.deltaY;
+            scrollContainer.style.scrollBehavior = "auto";
+        });
+
+        nextBtn.addEventListener("click", () => {
+            scrollContainer.style.scrollBehavior = "smooth";
+            scrollContainer.scrollLeft += 900;
+        });
+
+        backBtn.addEventListener("click", () => {
+            scrollContainer.style.scrollBehavior = "smooth";
+            scrollContainer.scrollLeft -= 900;
+        });
+
+    </script>
+
+
+</body>
+
+</html>
